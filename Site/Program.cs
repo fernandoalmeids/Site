@@ -17,7 +17,7 @@ namespace Site
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-        //teste
+        
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
