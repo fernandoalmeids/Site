@@ -37,7 +37,8 @@ namespace Site
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<SiteContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SiteContext")));
+                    options.UseMySql(Configuration.GetConnectionString("SiteContext"), builder =>
+                    builder.MigrationsAssembly("Site")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
