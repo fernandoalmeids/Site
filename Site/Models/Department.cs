@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace Site.Models
 {
@@ -17,6 +19,16 @@ namespace Site.Models
         {
             Id = id;
             Name = name;
+        }
+
+        public void AddSeller(Seller seller)
+        {
+            Sellers.Add(seller);
+        }
+
+        public double TotalSales(DateTime dataIni, DateTime dataFim)
+        {
+            return Sellers.Sum(seller => seller.TotalSales(dataIni, dataFim));
         }
     }
 }

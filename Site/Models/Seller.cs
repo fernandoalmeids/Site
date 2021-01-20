@@ -12,7 +12,7 @@ namespace Site.Models
         public double BaseSalary { get; set; }
         public DateTime BirthDate { get; set; }
 
-        public Department Department { get; set; } // O vendedor possui um departamento
+        public Department Department { get; set; } // O vendedor possui um departamento/
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
